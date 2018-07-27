@@ -24,7 +24,7 @@ public class Customer {
     int frequentRenterPoints = 0;
     String result = "Rental Record for " + getName() + "\n";
     for (Rental each : rentals) {
-      double thisAmount = getThisAmount(each);
+      double thisAmount = calculateRentalAmount(each);
       // add frequent renter points
       frequentRenterPoints++;
       // add bonus for a two day new release rental
@@ -45,7 +45,7 @@ public class Customer {
     return result;
   }
 
-  private double getThisAmount(Rental each) {
+  private double calculateRentalAmount(Rental each) {
     double thisAmount = 0;
     //determine amounts for each line
     switch (each.getMovie().getPriceCode()) {
