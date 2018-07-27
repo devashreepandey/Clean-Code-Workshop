@@ -20,19 +20,7 @@ public class Customer {
   }
 
   public String statement() {
-    String result = "Rental Record for " + getName() + "\n";
-    int totalFrequentRenterPoints = totalFrequentRentalPoints();
-    for (Rental rental : rentals) {
-      //show figures for this rental
-      result += "\t" + rental.getMovie().getTitle() + "\t" +
-          String.valueOf(rental.amount()) + "\n";
-    }
-
-    //add footer lines result
-    result += "Amount owed is " + String.valueOf(totalAmount()) + "\n";
-    result += "You earned " + String.valueOf(totalFrequentRenterPoints)
-        + " frequent renter points";
-    return result;
+    return new TextStatement().display(getName(), rentals, totalAmount(), totalFrequentRentalPoints());
   }
 
   private int totalFrequentRentalPoints() {
@@ -67,5 +55,6 @@ public class Customer {
     return result;
 
   }
+
 }
 
