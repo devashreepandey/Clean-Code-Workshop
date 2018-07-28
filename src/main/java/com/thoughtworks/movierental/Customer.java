@@ -21,28 +21,11 @@ public class Customer {
 
   public String statement() {
 
-    return new TextStatement().display(getName(), rentals, totalAmount(), totalFrequentRenterPoints());
+    return new TextStatement().display(getName(), new Rentals(rentals));
   }
 
   public String htmlStatement() {
-    return new HtmlStatement().display(getName(), rentals, totalAmount(), totalFrequentRenterPoints());
-  }
-
-  private int totalFrequentRenterPoints() {
-    int totalFrequentRenterPoints = 0;
-    for (Rental rental : rentals) {
-
-      totalFrequentRenterPoints += rental.frequentRenterPoints();
-    }
-    return totalFrequentRenterPoints;
-  }
-
-  private double totalAmount() {
-    double totalAmount = 0;
-    for (Rental rental : rentals) {
-      totalAmount += rental.amount();
-    }
-    return totalAmount;
+    return new HtmlStatement().display(getName(), new Rentals(rentals));
   }
 
 }

@@ -6,26 +6,44 @@ public class Movie {
   public static final int NEW_RELEASE = 1;
 
   private String title;
-  private int priceCode;
+  private PriceCode priceCode;
 
   public Movie(String title, int priceCode) {
     this.title = title;
-    this.priceCode = priceCode;
+    this.priceCode = createPriceCode(priceCode);
   }
 
   public int getPriceCode() {
-    return priceCode;
+    return priceCode.type();
   }
 
   public void setPriceCode(int arg) {
-    priceCode = arg;
+    priceCode = createPriceCode(arg);
   }
 
   public String getTitle() {
     return title;
   }
 
-    boolean isNewRelease() {
-      return getPriceCode() == NEW_RELEASE;
+  double amount(int daysRented) {
+      return priceCode.amount(daysRented);
     }
+
+
+  int frequentRenterPoints(int daysRented) {
+    return priceCode.frequentRenterPoints(daysRented);
+  }
+
+  private PriceCode createPriceCode(int code){
+    switch (code) {
+      case REGULAR:
+        return new Regular();
+      case NEW_RELEASE:
+        return new NewRelease();
+      case CHILDRENS:
+        return new Childrens();
+    }
+    throw new IllegalArgumentException("Unknown PriceCode "+ String.valueOf(code));
+  }
+
 }
