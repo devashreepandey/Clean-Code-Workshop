@@ -1,11 +1,16 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.models;
+
+import com.thoughtworks.movierental.presentation.HtmlStatement;
+import com.thoughtworks.movierental.presentation.TextStatement;
 
 public class Customer {
   private String name;
+  private String email;
   private Rentals rentals = new Rentals();
 
-  public Customer(String name) {
+  public Customer(String name, String email) {
     this.name = name;
+    this.email = email;
   }
 
   public void addRental(Rental arg) {
@@ -14,6 +19,14 @@ public class Customer {
 
   public String getName() {
     return name;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public Rentals getRentals() {
+    return rentals;
   }
 
   public String statement() {

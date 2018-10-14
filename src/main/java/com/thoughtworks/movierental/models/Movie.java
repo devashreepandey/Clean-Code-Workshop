@@ -1,4 +1,4 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.models;
 
 public class Movie {
   public static final int CHILDRENS = 2;

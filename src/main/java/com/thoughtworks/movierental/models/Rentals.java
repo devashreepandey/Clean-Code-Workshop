@@ -1,8 +1,8 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.models;
 
 import java.util.ArrayList;
 
-class Rentals extends ArrayList<Rental> {
+public class Rentals extends ArrayList<Rental> {
 
 
   public int totalFrequentRentalPoints() {

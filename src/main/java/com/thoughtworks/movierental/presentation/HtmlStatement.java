@@ -1,6 +1,9 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.presentation;
 
-class HtmlStatement {
+import com.thoughtworks.movierental.models.Rental;
+import com.thoughtworks.movierental.models.Rentals;
+
+public class HtmlStatement {
   public String display(String name, Rentals rentals) {
     String result = "<h1>Rental Statement for <b>"+ name +"</b></h1><br/>";
     for (Rental rental : rentals) {

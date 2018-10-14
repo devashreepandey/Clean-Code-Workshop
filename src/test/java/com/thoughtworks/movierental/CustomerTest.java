@@ -1,5 +1,8 @@
 package com.thoughtworks.movierental;
 
+import com.thoughtworks.movierental.models.Customer;
+import com.thoughtworks.movierental.models.Movie;
+import com.thoughtworks.movierental.models.Rental;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +14,7 @@ public class CustomerTest {
 
     @Before
     public void setup(){
-        customer = new Customer("Dhrupad");
+        customer = new Customer("Dhrupad", "email1@email.em");
         customer.addRental(new Rental(new Movie("Godfather", Movie.REGULAR), 3));
         customer.addRental(new Rental(new Movie("Toy Story", Movie.CHILDRENS), 2));
         customer.addRental(new Rental(new Movie("Avengers", Movie.NEW_RELEASE), 4));

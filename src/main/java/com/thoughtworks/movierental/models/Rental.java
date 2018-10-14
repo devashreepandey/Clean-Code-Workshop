@@ -1,4 +1,4 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.models;
 
 public class Rental {
 
@@ -18,7 +18,7 @@ public class Rental {
     return movie;
   }
 
-    double amount() {
+    public double amount() {
       double thisAmount = 0;
       switch (movie.getPriceCode()) {
         case Movie.REGULAR:

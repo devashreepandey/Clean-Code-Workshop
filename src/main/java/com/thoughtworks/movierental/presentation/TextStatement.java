@@ -1,6 +1,9 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.presentation;
 
-class TextStatement {
+import com.thoughtworks.movierental.models.Rental;
+import com.thoughtworks.movierental.models.Rentals;
+
+public class TextStatement {
   public String display(String name, Rentals rentals) {
     String result = "Rental Record for " + name + "\n";
     for (Rental rental : rentals) {
